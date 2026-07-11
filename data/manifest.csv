@@ -1,0 +1,261 @@
+election_id,office,district,status,filepath
+165300,President,Statewide,ok,President/Statewide_165300.csv
+165304,U.S. Senate,Statewide,ok,U.S._Senate/Statewide_165304.csv
+165323,U.S. House,1st Congressional,ok,U.S._House/1st_Congressional_165323.csv
+165343,U.S. House,2nd Congressional,ok,U.S._House/2nd_Congressional_165343.csv
+165309,U.S. House,3rd Congressional,ok,U.S._House/3rd_Congressional_165309.csv
+165373,U.S. House,4th Congressional,ok,U.S._House/4th_Congressional_165373.csv
+165353,U.S. House,5th Congressional,ok,U.S._House/5th_Congressional_165353.csv
+165336,U.S. House,6th Congressional,ok,U.S._House/6th_Congressional_165336.csv
+165413,U.S. House,7th Congressional,ok,U.S._House/7th_Congressional_165413.csv
+165302,U.S. House,8th Congressional,ok,U.S._House/8th_Congressional_165302.csv
+165316,U.S. House,9th Congressional,ok,U.S._House/9th_Congressional_165316.csv
+165314,Governor's Council,1st,ok,Governors_Council/1st_165314.csv
+165367,Governor's Council,2nd,ok,Governors_Council/2nd_165367.csv
+165307,Governor's Council,3rd,ok,Governors_Council/3rd_165307.csv
+165299,Governor's Council,4th,ok,Governors_Council/4th_165299.csv
+165334,Governor's Council,5th,ok,Governors_Council/5th_165334.csv
+165410,Governor's Council,6th,ok,Governors_Council/6th_165410.csv
+165360,Governor's Council,7th,ok,Governors_Council/7th_165360.csv
+165321,Governor's Council,8th,ok,Governors_Council/8th_165321.csv
+165325,State Senate,"Berkshire, Hampden, Franklin & Hampshire",ok,State_Senate/Berkshire_Hampden_Franklin__Hampshire_165325.csv
+165464,State Senate,First Plymouth & Norfolk,ok,State_Senate/First_Plymouth__Norfolk_165464.csv
+165393,State Senate,"Hampden, Hampshire & Worcester",ok,State_Senate/Hampden_Hampshire__Worcester_165393.csv
+165448,State Senate,Norfolk & Middlesex,ok,State_Senate/Norfolk__Middlesex_165448.csv
+165439,State Senate,"Norfolk, Plymouth & Bristol",ok,State_Senate/Norfolk_Plymouth__Bristol_165439.csv
+165395,State Senate,"Norfolk, Worcester & Middlesex",ok,State_Senate/Norfolk_Worcester__Middlesex_165395.csv
+165382,State Senate,Second Plymouth & Norfolk,ok,State_Senate/Second_Plymouth__Norfolk_165382.csv
+165398,State Senate,Third Bristol & Plymouth,ok,State_Senate/Third_Bristol__Plymouth_165398.csv
+165405,State Senate,Worcester & Hampden,ok,State_Senate/Worcester__Hampden_165405.csv
+165388,State Senate,Worcester & Hampshire,ok,State_Senate/Worcester__Hampshire_165388.csv
+165376,State Senate,Bristol and Norfolk,ok,State_Senate/Bristol_and_Norfolk_165376.csv
+165484,State Senate,1st Bristol and Plymouth,ok,State_Senate/1st_Bristol_and_Plymouth_165484.csv
+165319,State Senate,2nd Bristol and Plymouth,ok,State_Senate/2nd_Bristol_and_Plymouth_165319.csv
+165352,State Senate,Cape and Islands,ok,State_Senate/Cape_and_Islands_165352.csv
+165497,State Senate,1st Essex,ok,State_Senate/1st_Essex_165497.csv
+165402,State Senate,2nd Essex,ok,State_Senate/2nd_Essex_165402.csv
+165514,State Senate,3rd Essex,ok,State_Senate/3rd_Essex_165514.csv
+165437,State Senate,1st Essex and Middlesex,ok,State_Senate/1st_Essex_and_Middlesex_165437.csv
+165339,State Senate,2nd Essex and Middlesex,ok,State_Senate/2nd_Essex_and_Middlesex_165339.csv
+165462,State Senate,Hampden,ok,State_Senate/Hampden_165462.csv
+165330,State Senate,Hampden and Hampshire,ok,State_Senate/Hampden_and_Hampshire_165330.csv
+165345,State Senate,"Hampshire, Franklin and Worcester",ok,State_Senate/Hampshire_Franklin_and_Worcester_165345.csv
+165473,State Senate,1st Middlesex,ok,State_Senate/1st_Middlesex_165473.csv
+165452,State Senate,2nd Middlesex,ok,State_Senate/2nd_Middlesex_165452.csv
+165391,State Senate,3rd Middlesex,ok,State_Senate/3rd_Middlesex_165391.csv
+165356,State Senate,4th Middlesex,ok,State_Senate/4th_Middlesex_165356.csv
+165519,State Senate,5th Middlesex,ok,State_Senate/5th_Middlesex_165519.csv
+165369,State Senate,Middlesex and Norfolk,ok,State_Senate/Middlesex_and_Norfolk_165369.csv
+165312,State Senate,Middlesex and Worcester,ok,State_Senate/Middlesex_and_Worcester_165312.csv
+165431,State Senate,Middlesex and Suffolk,ok,State_Senate/Middlesex_and_Suffolk_165431.csv
+165305,State Senate,Norfolk and Plymouth,ok,State_Senate/Norfolk_and_Plymouth_165305.csv
+165432,State Senate,Norfolk and Suffolk,ok,State_Senate/Norfolk_and_Suffolk_165432.csv
+165436,State Senate,Plymouth and Barnstable,ok,State_Senate/Plymouth_and_Barnstable_165436.csv
+165430,State Senate,1st Suffolk,ok,State_Senate/1st_Suffolk_165430.csv
+165433,State Senate,2nd Suffolk,ok,State_Senate/2nd_Suffolk_165433.csv
+165434,State Senate,3rd Suffolk,ok,State_Senate/3rd_Suffolk_165434.csv
+165396,State Senate,Suffolk and Middlesex,ok,State_Senate/Suffolk_and_Middlesex_165396.csv
+165362,State Senate,Worcester and Middlesex,ok,State_Senate/Worcester_and_Middlesex_165362.csv
+165400,State Senate,1st Worcester,ok,State_Senate/1st_Worcester_165400.csv
+165378,State Senate,2nd Worcester,ok,State_Senate/2nd_Worcester_165378.csv
+165440,State Representative,1st Barnstable,ok,State_Representative/1st_Barnstable_165440.csv
+165386,State Representative,2nd Barnstable,ok,State_Representative/2nd_Barnstable_165386.csv
+165435,State Representative,3rd Barnstable,ok,State_Representative/3rd_Barnstable_165435.csv
+165455,State Representative,4th Barnstable,ok,State_Representative/4th_Barnstable_165455.csv
+165385,State Representative,5th Barnstable,ok,State_Representative/5th_Barnstable_165385.csv
+165351,State Representative,"Barnstable, Dukes and Nantucket",ok,State_Representative/Barnstable_Dukes_and_Nantucket_165351.csv
+165324,State Representative,1st Berkshire,ok,State_Representative/1st_Berkshire_165324.csv
+165535,State Representative,2nd Berkshire,ok,State_Representative/2nd_Berkshire_165535.csv
+165332,State Representative,3rd Berkshire,ok,State_Representative/3rd_Berkshire_165332.csv
+165486,State Representative,1st Bristol,ok,State_Representative/1st_Bristol_165486.csv
+165375,State Representative,2nd Bristol,ok,State_Representative/2nd_Bristol_165375.csv
+165478,State Representative,3rd Bristol,ok,State_Representative/3rd_Bristol_165478.csv
+165532,State Representative,4th Bristol,ok,State_Representative/4th_Bristol_165532.csv
+165469,State Representative,5th Bristol,ok,State_Representative/5th_Bristol_165469.csv
+165483,State Representative,6th Bristol,ok,State_Representative/6th_Bristol_165483.csv
+165482,State Representative,7th Bristol,ok,State_Representative/7th_Bristol_165482.csv
+165317,State Representative,8th Bristol,ok,State_Representative/8th_Bristol_165317.csv
+165467,State Representative,9th Bristol,ok,State_Representative/9th_Bristol_165467.csv
+165318,State Representative,10th Bristol,ok,State_Representative/10th_Bristol_165318.csv
+165528,State Representative,11th Bristol,ok,State_Representative/11th_Bristol_165528.csv
+165397,State Representative,12th Bristol,ok,State_Representative/12th_Bristol_165397.csv
+165529,State Representative,13th Bristol,ok,State_Representative/13th_Bristol_165529.csv
+165374,State Representative,14th Bristol,ok,State_Representative/14th_Bristol_165374.csv
+165337,State Representative,1st Essex,ok,State_Representative/1st_Essex_165337.csv
+165491,State Representative,2nd Essex,ok,State_Representative/2nd_Essex_165491.csv
+165496,State Representative,3rd Essex,ok,State_Representative/3rd_Essex_165496.csv
+165502,State Representative,4th Essex,ok,State_Representative/4th_Essex_165502.csv
+165479,State Representative,5th Essex,ok,State_Representative/5th_Essex_165479.csv
+165401,State Representative,6th Essex,ok,State_Representative/6th_Essex_165401.csv
+165542,State Representative,7th Essex,ok,State_Representative/7th_Essex_165542.csv
+165510,State Representative,8th Essex,ok,State_Representative/8th_Essex_165510.csv
+165512,State Representative,9th Essex,ok,State_Representative/9th_Essex_165512.csv
+165513,State Representative,10th Essex,ok,State_Representative/10th_Essex_165513.csv
+165511,State Representative,11th Essex,ok,State_Representative/11th_Essex_165511.csv
+165534,State Representative,12th Essex,ok,State_Representative/12th_Essex_165534.csv
+165466,State Representative,13th Essex,ok,State_Representative/13th_Essex_165466.csv
+165338,State Representative,14th Essex,ok,State_Representative/14th_Essex_165338.csv
+165495,State Representative,15th Essex,ok,State_Representative/15th_Essex_165495.csv
+165503,State Representative,16th Essex,ok,State_Representative/16th_Essex_165503.csv
+165348,State Representative,17th Essex,ok,State_Representative/17th_Essex_165348.csv
+165347,State Representative,18th Essex,ok,State_Representative/18th_Essex_165347.csv
+165366,State Representative,1st Franklin,ok,State_Representative/1st_Franklin_165366.csv
+165371,State Representative,2nd Franklin,ok,State_Representative/2nd_Franklin_165371.csv
+165442,State Representative,1st Hampden,ok,State_Representative/1st_Hampden_165442.csv
+165475,State Representative,2nd Hampden,ok,State_Representative/2nd_Hampden_165475.csv
+165329,State Representative,3rd Hampden,ok,State_Representative/3rd_Hampden_165329.csv
+165545,State Representative,4th Hampden,ok,State_Representative/4th_Hampden_165545.csv
+165461,State Representative,5th Hampden,ok,State_Representative/5th_Hampden_165461.csv
+165328,State Representative,6th Hampden,ok,State_Representative/6th_Hampden_165328.csv
+165392,State Representative,7th Hampden,ok,State_Representative/7th_Hampden_165392.csv
+165460,State Representative,8th Hampden,ok,State_Representative/8th_Hampden_165460.csv
+165547,State Representative,9th Hampden,ok,State_Representative/9th_Hampden_165547.csv
+165548,State Representative,10th Hampden,ok,State_Representative/10th_Hampden_165548.csv
+165546,State Representative,11th Hampden,ok,State_Representative/11th_Hampden_165546.csv
+165476,State Representative,12th Hampden,ok,State_Representative/12th_Hampden_165476.csv
+165459,State Representative,1st Hampshire,ok,State_Representative/1st_Hampshire_165459.csv
+165477,State Representative,2nd Hampshire,ok,State_Representative/2nd_Hampshire_165477.csv
+165344,State Representative,3rd Hampshire,ok,State_Representative/3rd_Hampshire_165344.csv
+165361,State Representative,1st Middlesex,ok,State_Representative/1st_Middlesex_165361.csv
+165456,State Representative,2nd Middlesex,ok,State_Representative/2nd_Middlesex_165456.csv
+165406,State Representative,3rd Middlesex,ok,State_Representative/3rd_Middlesex_165406.csv
+165487,State Representative,4th Middlesex,ok,State_Representative/4th_Middlesex_165487.csv
+165527,State Representative,5th Middlesex,ok,State_Representative/5th_Middlesex_165527.csv
+165489,State Representative,6th Middlesex,ok,State_Representative/6th_Middlesex_165489.csv
+165368,State Representative,7th Middlesex,ok,State_Representative/7th_Middlesex_165368.csv
+165500,State Representative,8th Middlesex,ok,State_Representative/8th_Middlesex_165500.csv
+165551,State Representative,9th Middlesex,ok,State_Representative/9th_Middlesex_165551.csv
+165531,State Representative,10th Middlesex,ok,State_Representative/10th_Middlesex_165531.csv
+165530,State Representative,11th Middlesex,ok,State_Representative/11th_Middlesex_165530.csv
+165447,State Representative,12th Middlesex,ok,State_Representative/12th_Middlesex_165447.csv
+165465,State Representative,13th Middlesex,ok,State_Representative/13th_Middlesex_165465.csv
+165310,State Representative,14th Middlesex,ok,State_Representative/14th_Middlesex_165310.csv
+165506,State Representative,15th Middlesex,ok,State_Representative/15th_Middlesex_165506.csv
+165457,State Representative,16th Middlesex,ok,State_Representative/16th_Middlesex_165457.csv
+165509,State Representative,17th Middlesex,ok,State_Representative/17th_Middlesex_165509.csv
+165508,State Representative,18th Middlesex,ok,State_Representative/18th_Middlesex_165508.csv
+165550,State Representative,19th Middlesex,ok,State_Representative/19th_Middlesex_165550.csv
+165515,State Representative,20th Middlesex,ok,State_Representative/20th_Middlesex_165515.csv
+165390,State Representative,21st Middlesex,ok,State_Representative/21st_Middlesex_165390.csv
+165404,State Representative,22nd Middlesex,ok,State_Representative/22nd_Middlesex_165404.csv
+165355,State Representative,23rd Middlesex,ok,State_Representative/23rd_Middlesex_165355.csv
+165354,State Representative,24th Middlesex,ok,State_Representative/24th_Middlesex_165354.csv
+165449,State Representative,25th Middlesex,ok,State_Representative/25th_Middlesex_165449.csv
+165451,State Representative,26th Middlesex,ok,State_Representative/26th_Middlesex_165451.csv
+165544,State Representative,27th Middlesex,ok,State_Representative/27th_Middlesex_165544.csv
+165480,State Representative,28th Middlesex,ok,State_Representative/28th_Middlesex_165480.csv
+165450,State Representative,29th Middlesex,ok,State_Representative/29th_Middlesex_165450.csv
+165539,State Representative,30th Middlesex,ok,State_Representative/30th_Middlesex_165539.csv
+165549,State Representative,31st Middlesex,ok,State_Representative/31st_Middlesex_165549.csv
+165517,State Representative,32nd Middlesex,ok,State_Representative/32nd_Middlesex_165517.csv
+165518,State Representative,33rd Middlesex,ok,State_Representative/33rd_Middlesex_165518.csv
+165523,State Representative,34th Middlesex,ok,State_Representative/34th_Middlesex_165523.csv
+165516,State Representative,35th Middlesex,ok,State_Representative/35th_Middlesex_165516.csv
+165472,State Representative,36th Middlesex,ok,State_Representative/36th_Middlesex_165472.csv
+165311,State Representative,37th Middlesex,ok,State_Representative/37th_Middlesex_165311.csv
+165537,State Representative,1st Norfolk,ok,State_Representative/1st_Norfolk_165537.csv
+165538,State Representative,2nd Norfolk,ok,State_Representative/2nd_Norfolk_165538.csv
+165498,State Representative,3rd Norfolk,ok,State_Representative/3rd_Norfolk_165498.csv
+165553,State Representative,4th Norfolk,ok,State_Representative/4th_Norfolk_165553.csv
+165438,State Representative,5th Norfolk,ok,State_Representative/5th_Norfolk_165438.csv
+165381,State Representative,6th Norfolk,ok,State_Representative/6th_Norfolk_165381.csv
+165524,State Representative,7th Norfolk,ok,State_Representative/7th_Norfolk_165524.csv
+165520,State Representative,8th Norfolk,ok,State_Representative/8th_Norfolk_165520.csv
+165522,State Representative,9th Norfolk,ok,State_Representative/9th_Norfolk_165522.csv
+165490,State Representative,10th Norfolk,ok,State_Representative/10th_Norfolk_165490.csv
+165468,State Representative,11th Norfolk,ok,State_Representative/11th_Norfolk_165468.csv
+165533,State Representative,12th Norfolk,ok,State_Representative/12th_Norfolk_165533.csv
+165471,State Representative,13th Norfolk,ok,State_Representative/13th_Norfolk_165471.csv
+165507,State Representative,14th Norfolk,ok,State_Representative/14th_Norfolk_165507.csv
+165446,State Representative,15th Norfolk,ok,State_Representative/15th_Norfolk_165446.csv
+165536,State Representative,1st Plymouth,ok,State_Representative/1st_Plymouth_165536.csv
+165453,State Representative,2nd Plymouth,ok,State_Representative/2nd_Plymouth_165453.csv
+165463,State Representative,3rd Plymouth,ok,State_Representative/3rd_Plymouth_165463.csv
+165521,State Representative,4th Plymouth,ok,State_Representative/4th_Plymouth_165521.csv
+165494,State Representative,5th Plymouth,ok,State_Representative/5th_Plymouth_165494.csv
+165474,State Representative,6th Plymouth,ok,State_Representative/6th_Plymouth_165474.csv
+165303,State Representative,7th Plymouth,ok,State_Representative/7th_Plymouth_165303.csv
+165441,State Representative,8th Plymouth,ok,State_Representative/8th_Plymouth_165441.csv
+165444,State Representative,9th Plymouth,ok,State_Representative/9th_Plymouth_165444.csv
+165445,State Representative,10th Plymouth,ok,State_Representative/10th_Plymouth_165445.csv
+165443,State Representative,11th Plymouth,ok,State_Representative/11th_Plymouth_165443.csv
+165493,State Representative,12th Plymouth,ok,State_Representative/12th_Plymouth_165493.csv
+165418,State Representative,1st Suffolk,ok,State_Representative/1st_Suffolk_165418.csv
+165422,State Representative,2nd Suffolk,ok,State_Representative/2nd_Suffolk_165422.csv
+165427,State Representative,3rd Suffolk,ok,State_Representative/3rd_Suffolk_165427.csv
+165420,State Representative,4th Suffolk,ok,State_Representative/4th_Suffolk_165420.csv
+165417,State Representative,5th Suffolk,ok,State_Representative/5th_Suffolk_165417.csv
+165425,State Representative,6th Suffolk,ok,State_Representative/6th_Suffolk_165425.csv
+165424,State Representative,7th Suffolk,ok,State_Representative/7th_Suffolk_165424.csv
+165415,State Representative,8th Suffolk,ok,State_Representative/8th_Suffolk_165415.csv
+165421,State Representative,9th Suffolk,ok,State_Representative/9th_Suffolk_165421.csv
+165426,State Representative,10th Suffolk,ok,State_Representative/10th_Suffolk_165426.csv
+165458,State Representative,11th Suffolk,ok,State_Representative/11th_Suffolk_165458.csv
+165429,State Representative,12th Suffolk,ok,State_Representative/12th_Suffolk_165429.csv
+165428,State Representative,13th Suffolk,ok,State_Representative/13th_Suffolk_165428.csv
+165419,State Representative,14th Suffolk,ok,State_Representative/14th_Suffolk_165419.csv
+165416,State Representative,15th Suffolk,ok,State_Representative/15th_Suffolk_165416.csv
+165541,State Representative,16th Suffolk,ok,State_Representative/16th_Suffolk_165541.csv
+165423,State Representative,17th Suffolk,ok,State_Representative/17th_Suffolk_165423.csv
+165414,State Representative,18th Suffolk,ok,State_Representative/18th_Suffolk_165414.csv
+165540,State Representative,19th Suffolk,ok,State_Representative/19th_Suffolk_165540.csv
+165499,State Representative,1st Worcester,ok,State_Representative/1st_Worcester_165499.csv
+165359,State Representative,2nd Worcester,ok,State_Representative/2nd_Worcester_165359.csv
+165485,State Representative,3rd Worcester,ok,State_Representative/3rd_Worcester_165485.csv
+165505,State Representative,4th Worcester,ok,State_Representative/4th_Worcester_165505.csv
+165387,State Representative,5th Worcester,ok,State_Representative/5th_Worcester_165387.csv
+160911,State Representative,6th Worcester,ok,State_Representative/6th_Worcester_160911.csv
+165454,State Representative,6th Worcester,ok,State_Representative/6th_Worcester_165454.csv
+165377,State Representative,7th Worcester,ok,State_Representative/7th_Worcester_165377.csv
+165394,State Representative,8th Worcester,ok,State_Representative/8th_Worcester_165394.csv
+165492,State Representative,9th Worcester,ok,State_Representative/9th_Worcester_165492.csv
+165501,State Representative,10th Worcester,ok,State_Representative/10th_Worcester_165501.csv
+165543,State Representative,11th Worcester,ok,State_Representative/11th_Worcester_165543.csv
+165399,State Representative,12th Worcester,ok,State_Representative/12th_Worcester_165399.csv
+165556,State Representative,13th Worcester,ok,State_Representative/13th_Worcester_165556.csv
+165552,State Representative,14th Worcester,ok,State_Representative/14th_Worcester_165552.csv
+165554,State Representative,15th Worcester,ok,State_Representative/15th_Worcester_165554.csv
+165555,State Representative,16th Worcester,ok,State_Representative/16th_Worcester_165555.csv
+165504,State Representative,17th Worcester,ok,State_Representative/17th_Worcester_165504.csv
+165470,State Representative,18th Worcester,ok,State_Representative/18th_Worcester_165470.csv
+165488,State Representative,19th Worcester,ok,State_Representative/19th_Worcester_165488.csv
+165383,Clerk of Courts,Barnstable County,ok,Clerk_of_Courts/Barnstable_County_165383.csv
+165320,Clerk of Courts,Berkshire County,ok,Clerk_of_Courts/Berkshire_County_165320.csv
+165313,Clerk of Courts,Bristol County,ok,Clerk_of_Courts/Bristol_County_165313.csv
+165349,Clerk of Courts,Dukes County,ok,Clerk_of_Courts/Dukes_County_165349.csv
+165333,Clerk of Courts,Essex County,ok,Clerk_of_Courts/Essex_County_165333.csv
+165363,Clerk of Courts,Franklin County,ok,Clerk_of_Courts/Franklin_County_165363.csv
+165326,Clerk of Courts,Hampden County,ok,Clerk_of_Courts/Hampden_County_165326.csv
+165340,Clerk of Courts,Hampshire County,ok,Clerk_of_Courts/Hampshire_County_165340.csv
+165306,Clerk of Courts,Middlesex County,ok,Clerk_of_Courts/Middlesex_County_165306.csv
+165525,Clerk of Courts,Nantucket County,ok,Clerk_of_Courts/Nantucket_County_165525.csv
+165379,Clerk of Courts,Norfolk County,ok,Clerk_of_Courts/Norfolk_County_165379.csv
+165298,Clerk of Courts,Plymouth County,ok,Clerk_of_Courts/Plymouth_County_165298.csv
+165357,Clerk of Courts,Worcester County,ok,Clerk_of_Courts/Worcester_County_165357.csv
+165407,Clerk of Superior Court (Civil),Suffolk County,ok,Clerk_of_Superior_Court_Civil/Suffolk_County_165407.csv
+165408,Clerk of Superior Court (Criminal),Suffolk County,ok,Clerk_of_Superior_Court_Criminal/Suffolk_County_165408.csv
+165409,Clerk of Supreme Judicial Court,Suffolk County,ok,Clerk_of_Supreme_Judicial_Court/Suffolk_County_165409.csv
+165384,Register of Deeds,Barnstable,ok,Register_of_Deeds/Barnstable_165384.csv
+165389,Register of Deeds,Berkshire Middle,ok,Register_of_Deeds/Berkshire_Middle_165389.csv
+165322,Register of Deeds,Berkshire Northern,ok,Register_of_Deeds/Berkshire_Northern_165322.csv
+165331,Register of Deeds,Berkshire Southern,ok,Register_of_Deeds/Berkshire_Southern_165331.csv
+165372,Register of Deeds,Bristol Northern,ok,Register_of_Deeds/Bristol_Northern_165372.csv
+165315,Register of Deeds,Bristol Southern,ok,Register_of_Deeds/Bristol_Southern_165315.csv
+165350,Register of Deeds,Dukes,ok,Register_of_Deeds/Dukes_165350.csv
+165346,Register of Deeds,Essex Northern,ok,Register_of_Deeds/Essex_Northern_165346.csv
+165335,Register of Deeds,Essex Southern,ok,Register_of_Deeds/Essex_Southern_165335.csv
+165481,Register of Deeds,Fall River,ok,Register_of_Deeds/Fall_River_165481.csv
+165365,Register of Deeds,Franklin,ok,Register_of_Deeds/Franklin_165365.csv
+165327,Register of Deeds,Hampden,ok,Register_of_Deeds/Hampden_165327.csv
+165341,Register of Deeds,Hampshire,ok,Register_of_Deeds/Hampshire_165341.csv
+165403,Register of Deeds,Middlesex Northern,ok,Register_of_Deeds/Middlesex_Northern_165403.csv
+165308,Register of Deeds,Middlesex Southern,ok,Register_of_Deeds/Middlesex_Southern_165308.csv
+165526,Register of Deeds,Nantucket,ok,Register_of_Deeds/Nantucket_165526.csv
+165380,Register of Deeds,Norfolk,ok,Register_of_Deeds/Norfolk_165380.csv
+165301,Register of Deeds,Plymouth,ok,Register_of_Deeds/Plymouth_165301.csv
+165411,Register of Deeds,Suffolk,ok,Register_of_Deeds/Suffolk_165411.csv
+165370,Register of Deeds,Worcester,ok,Register_of_Deeds/Worcester_165370.csv
+165358,Register of Deeds,Worcester Northern,ok,Register_of_Deeds/Worcester_Northern_165358.csv
+165342,Register of Probate,Hampshire County,ok,Register_of_Probate/Hampshire_County_165342.csv
+165412,Register of Probate,Suffolk County,ok,Register_of_Probate/Suffolk_County_165412.csv
+165364,Council of Governments Executive Committee,Franklin County,ok,Council_of_Governments_Executive_Committee/Franklin_County_165364.csv
