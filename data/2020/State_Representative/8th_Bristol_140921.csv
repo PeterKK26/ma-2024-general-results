@@ -1,0 +1,16 @@
+City/Town,Ward,Pct,"Paul Schmid, III","Evan Gendreau","All Others",Blanks,"Total Votes Cast"
+,,,Democratic,Republican
+"Fall River",1,A,858,607,0,134,"1,599"
+"Fall River",6,A,747,540,0,129,"1,416"
+"Fall River",6,B,579,288,0,77,944
+Freetown,-,2,881,856,0,119,"1,856"
+Freetown,-,3,862,850,1,130,"1,843"
+"New Bedford",1,D,782,522,3,88,"1,395"
+"New Bedford",1,E,751,394,3,97,"1,245"
+"New Bedford",1,F,490,472,1,74,"1,037"
+Westport,-,A,"1,050",881,1,98,"2,030"
+Westport,-,B,"1,389",885,0,119,"2,393"
+Westport,-,C,967,855,2,93,"1,917"
+Westport,-,D,998,760,0,69,"1,827"
+Westport,-,E,"1,397",943,2,117,"2,459"
+TOTALS,,,"11,751","8,853",13,"1,344","21,961"

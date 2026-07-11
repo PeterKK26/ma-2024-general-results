@@ -1,0 +1,63 @@
+City/Town,Ward,Pct,"Adam Gomez","All Others",Blanks,"Total Votes Cast"
+,,,Democratic
+Chicopee,2,A,802,33,167,"1,002"
+Chicopee,2,B,"1,251",37,423,"1,711"
+Chicopee,3,A,"1,047",36,318,"1,401"
+Chicopee,3,B,896,35,221,"1,152"
+Chicopee,4,A,"1,008",38,280,"1,326"
+Chicopee,4,B,980,31,270,"1,281"
+Springfield,1,A,437,18,85,540
+Springfield,1,B,601,21,108,730
+Springfield,1,C,433,13,72,518
+Springfield,1,D,521,10,88,619
+Springfield,1,E,604,11,110,725
+Springfield,1,F,501,9,119,629
+Springfield,1,G,567,16,110,693
+Springfield,1,H,591,11,98,700
+Springfield,2,A,606,14,87,707
+Springfield,2,B,834,27,194,"1,055"
+Springfield,2,C,619,23,122,764
+Springfield,2,D,834,30,160,"1,024"
+Springfield,2,E,783,25,208,"1,016"
+Springfield,2,F,923,22,171,"1,116"
+Springfield,2,H,792,22,225,"1,039"
+Springfield,3,A,461,5,89,555
+Springfield,3,B,423,11,91,525
+Springfield,3,C,358,15,58,431
+Springfield,3,D,518,15,79,612
+Springfield,3,E,417,18,59,494
+Springfield,3,F,459,13,104,576
+Springfield,3,G,408,6,71,485
+Springfield,3,H,547,13,112,672
+Springfield,4,A,713,12,109,834
+Springfield,4,B,676,15,115,806
+Springfield,4,C,528,13,62,603
+Springfield,4,D,585,10,79,674
+Springfield,4,E,520,8,96,624
+Springfield,4,G,656,9,113,778
+Springfield,4,H,587,9,104,700
+Springfield,5,A,657,16,92,765
+Springfield,5,B,896,24,126,"1,046"
+Springfield,5,C,699,32,176,907
+Springfield,5,E,"1,048",15,185,"1,248"
+Springfield,6,A,574,19,126,719
+Springfield,6,C,703,22,246,971
+Springfield,6,E,567,21,147,735
+Springfield,6,F,682,18,102,802
+Springfield,6,G,771,11,158,940
+Springfield,8,B,855,20,172,"1,047"
+Springfield,8,C,777,19,161,957
+Springfield,8,D,486,12,96,594
+Springfield,8,E,576,15,119,710
+Springfield,8,F,819,28,192,"1,039"
+Springfield,8,G,805,22,207,"1,034"
+Springfield,8,H,816,18,126,960
+"W. Springfield",-,1,655,7,264,926
+"W. Springfield",-,2,898,6,306,"1,210"
+"W. Springfield",-,3,"1,055",17,467,"1,539"
+"W. Springfield",-,4,"1,189",47,499,"1,735"
+"W. Springfield",-,5,"1,361",39,903,"2,303"
+"W. Springfield",-,6,"1,290",30,787,"2,107"
+"W. Springfield",-,7,"1,308",31,909,"2,248"
+"W. Springfield",-,8,"1,065",8,460,"1,533"
+TOTALS,,,"44,038","1,151","12,003","57,192"

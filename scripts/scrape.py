@@ -1,15 +1,20 @@
 #!/usr/bin/env python3
 """
-Scrapes every 2024 General Election race from electionstats.state.ma.us
-and downloads precinct-level results as CSV.
+Scrapes every General Election race for a given year from
+electionstats.state.ma.us and downloads precinct-level results as CSV.
 
 Usage:
     pip install requests beautifulsoup4
-    python scrape.py
+    python scrape.py 2024
+    python scrape.py 2022
+    python scrape.py 2020
+    python scrape.py 2018
+
+    (defaults to 2024 if no year is given)
 
 Output:
-    ../data/<Office>/<District>.csv       (precinct-level results)
-    ../data/manifest.csv                  (index of every race + status)
+    ../data/<year>/<Office>/<District>.csv   (precinct-level results)
+    ../data/<year>/manifest.csv              (index of every race + status)
 
 Notes:
     - This hits electionstats.state.ma.us directly. Be polite: there's a
@@ -39,12 +44,14 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
+YEAR = sys.argv[1] if len(sys.argv) > 1 else "2024"
+
 BASE = "https://electionstats.state.ma.us"
-SEARCH_URL = f"{BASE}/elections/search/year_from:2024/year_to:2024/stage:General"
+SEARCH_URL = f"{BASE}/elections/search/year_from:{YEAR}/year_to:{YEAR}/stage:General"
 DOWNLOAD_URL = f"{BASE}/elections/download/{{id}}/precincts_include:1/"
 VIEW_URL_RE = re.compile(r"/elections/view/(\d+)")
 
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", YEAR)
 REQUEST_DELAY_SECONDS = 1.0
 HEADERS = {"User-Agent": "Mozilla/5.0 (research script; contact: n/a)"}
 

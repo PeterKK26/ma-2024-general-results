@@ -1,0 +1,184 @@
+City/Town,Ward,Pct,"Nick Cocchi","All Others",Blanks,"Total Votes Cast"
+,,,Democratic
+Agawam,-,1,864,18,284,"1,166"
+Agawam,-,2,"1,180",26,426,"1,632"
+Agawam,-,3,954,21,297,"1,272"
+Agawam,-,4,829,24,272,"1,125"
+Agawam,-,5,"1,201",26,397,"1,624"
+Agawam,-,6,"1,032",22,358,"1,412"
+Agawam,-,7,"1,198",26,403,"1,627"
+Agawam,-,8,"1,148",36,359,"1,543"
+Blandford,,,409,1,208,618
+Brimfield,,,"1,174",55,513,"1,742"
+Chester,,,376,0,175,551
+Chicopee,1,A,824,22,162,"1,008"
+Chicopee,1,B,"1,003",25,210,"1,238"
+Chicopee,2,A,426,14,74,514
+Chicopee,2,B,786,25,199,"1,010"
+Chicopee,3,A,559,17,149,725
+Chicopee,3,A1,96,3,19,118
+Chicopee,3,B,493,13,116,622
+Chicopee,4,A,620,21,144,785
+Chicopee,4,B,567,18,132,717
+Chicopee,5,A,755,14,154,923
+Chicopee,5,B,668,18,161,847
+Chicopee,6,AN,333,6,75,414
+Chicopee,6,AS,561,7,146,714
+Chicopee,6,BE,868,25,221,"1,114"
+Chicopee,6,BW,146,7,47,200
+Chicopee,7,A,492,11,80,583
+Chicopee,7,B,541,18,108,667
+Chicopee,8,A,774,23,195,992
+Chicopee,8,B,685,19,153,857
+Chicopee,9,A,776,21,181,978
+Chicopee,9,B,865,27,235,"1,127"
+"E. Longmeadow",-,1,"1,120",33,263,"1,416"
+"E. Longmeadow",-,2,959,25,251,"1,235"
+"E. Longmeadow",-,2A,28,1,11,40
+"E. Longmeadow",-,3,"1,078",30,260,"1,368"
+"E. Longmeadow",-,3A,56,2,14,72
+"E. Longmeadow",-,4,915,20,284,"1,219"
+"E. Longmeadow",-,4A,208,0,58,266
+"E. Longmeadow",-,5,"1,033",32,369,"1,434"
+Granville,,,478,0,272,750
+Hampden,,,"1,758",40,554,"2,352"
+Holland,,,697,31,340,"1,068"
+Holyoke,1,A,192,5,50,247
+Holyoke,1,B,301,6,62,369
+Holyoke,2,A,333,10,71,414
+Holyoke,2,B,124,7,39,170
+Holyoke,3,A,537,16,125,678
+Holyoke,3,B,777,21,215,"1,013"
+Holyoke,4,A,236,11,47,294
+Holyoke,4,B,442,13,100,555
+Holyoke,5,A,"1,080",24,314,"1,418"
+Holyoke,5,B,564,11,188,763
+Holyoke,6,A,522,17,106,645
+Holyoke,6,B,623,17,136,776
+Holyoke,7,A,"1,063",28,270,"1,361"
+Holyoke,7,B,849,28,191,"1,068"
+Longmeadow,-,A,"1,254",29,243,"1,526"
+Longmeadow,-,B,"1,150",24,228,"1,402"
+Longmeadow,-,C,"1,209",33,290,"1,532"
+Longmeadow,-,D,"1,186",15,274,"1,475"
+Longmeadow,-,E,"1,141",13,245,"1,399"
+Ludlow,-,1,"1,086",18,247,"1,351"
+Ludlow,-,2,739,12,168,919
+Ludlow,-,3,"1,294",27,341,"1,662"
+Ludlow,-,4,"1,069",11,261,"1,341"
+Ludlow,-,5,931,11,211,"1,153"
+Ludlow,-,6,"1,311",10,302,"1,623"
+Monson,-,A,863,0,370,"1,233"
+Monson,-,B,834,0,387,"1,221"
+Monson,-,C,883,0,404,"1,287"
+Montgomery,,,326,0,122,448
+Palmer,-,1,884,24,323,"1,231"
+Palmer,-,2,861,26,349,"1,236"
+Palmer,-,3,717,8,204,929
+Palmer,-,4,741,14,289,"1,044"
+Russell,,,458,4,177,639
+Southwick,-,1,"1,068",47,483,"1,598"
+Southwick,-,2,862,33,289,"1,184"
+Southwick,-,3,"1,046",33,352,"1,431"
+Springfield,1,A,223,11,31,265
+Springfield,1,B,250,9,35,294
+Springfield,1,C,155,4,13,172
+Springfield,1,C1,18,0,3,21
+Springfield,1,D,175,2,15,192
+Springfield,1,D1,44,1,9,54
+Springfield,1,E,168,9,28,205
+Springfield,1,F,232,10,34,276
+Springfield,1,G,188,6,27,221
+Springfield,1,H,356,5,43,404
+Springfield,2,A,248,3,48,299
+Springfield,2,B,490,10,108,608
+Springfield,2,C,266,6,36,308
+Springfield,2,D,429,10,62,501
+Springfield,2,E,431,13,66,510
+Springfield,2,F,415,7,58,480
+Springfield,2,G,483,13,105,601
+Springfield,2,H,511,14,76,601
+Springfield,3,A,210,6,22,238
+Springfield,3,B,189,1,35,225
+Springfield,3,C,171,3,31,205
+Springfield,3,D,210,7,14,231
+Springfield,3,E,119,7,15,141
+Springfield,3,F,180,4,28,212
+Springfield,3,G,137,4,24,165
+Springfield,3,H,192,6,27,225
+Springfield,4,A,449,16,57,522
+Springfield,4,B,252,5,18,275
+Springfield,4,C,201,4,19,224
+Springfield,4,D,207,3,30,240
+Springfield,4,E,216,3,22,241
+Springfield,4,F,86,1,12,99
+Springfield,4,G,312,4,46,362
+Springfield,4,H,309,2,29,340
+Springfield,5,A,379,8,48,435
+Springfield,5,B,473,18,62,553
+Springfield,5,C,364,14,81,459
+Springfield,5,C1,7,0,4,11
+Springfield,5,D,698,13,141,852
+Springfield,5,E,536,9,69,614
+Springfield,5,F,565,14,129,708
+Springfield,5,G,729,12,133,874
+Springfield,5,H,522,13,103,638
+Springfield,6,A,300,5,57,362
+Springfield,6,B,512,6,116,634
+Springfield,6,C,393,15,85,493
+Springfield,6,D,666,24,134,824
+Springfield,6,D1,31,0,3,34
+Springfield,6,E,232,8,33,273
+Springfield,6,F,284,7,34,325
+Springfield,6,G,414,9,71,494
+Springfield,6,H,525,23,91,639
+Springfield,7,A,585,21,110,716
+Springfield,7,A1,23,0,2,25
+Springfield,7,B,828,18,114,960
+Springfield,7,B1,5,0,1,6
+Springfield,7,C,760,15,122,897
+Springfield,7,D,556,17,130,703
+Springfield,7,E,329,9,60,398
+Springfield,7,F,776,15,158,949
+Springfield,7,G,791,22,164,977
+Springfield,7,H,305,4,70,379
+Springfield,7,H1,58,2,13,73
+Springfield,8,A,441,15,83,539
+Springfield,8,B,429,10,44,483
+Springfield,8,B1,35,2,9,46
+Springfield,8,C,391,23,75,489
+Springfield,8,D,215,10,40,265
+Springfield,8,E,243,3,34,280
+Springfield,8,F,370,13,69,452
+Springfield,8,G,401,8,87,496
+Springfield,8,G1,11,0,3,14
+Springfield,8,H,406,7,56,469
+Tolland,,,159,0,90,249
+Wales,,,501,43,215,759
+"W. Springfield",-,1,275,3,97,375
+"W. Springfield",-,2,444,4,108,556
+"W. Springfield",-,3,748,5,213,966
+"W. Springfield",-,4,842,4,217,"1,063"
+"W. Springfield",-,5,"1,240",11,375,"1,626"
+"W. Springfield",-,6,"1,081",9,381,"1,471"
+"W. Springfield",-,7,"1,048",7,389,"1,444"
+"W. Springfield",-,8,803,7,247,"1,057"
+Westfield,1,A,"1,144",11,398,"1,553"
+Westfield,1,B,986,14,372,"1,372"
+Westfield,2,A,421,1,116,538
+Westfield,2,A1,29,1,10,40
+Westfield,2,B,703,5,227,935
+Westfield,3,A,539,1,157,697
+Westfield,3,B,949,16,277,"1,242"
+Westfield,4,A,428,4,199,631
+Westfield,4,B,"1,208",16,401,"1,625"
+Westfield,5,A,"1,193",12,427,"1,632"
+Westfield,5,B,"1,140",9,410,"1,559"
+Westfield,6,A,990,13,336,"1,339"
+Westfield,6,B,761,5,283,"1,049"
+Westfield,6,B1,56,0,21,77
+Wilbraham,-,A,"1,326",31,341,"1,698"
+Wilbraham,-,B,"1,217",29,305,"1,551"
+Wilbraham,-,C,"1,264",27,405,"1,696"
+Wilbraham,-,D,"1,439",27,322,"1,788"
+TOTALS,,,"108,133","2,365","29,205","139,703"
