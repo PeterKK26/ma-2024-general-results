@@ -350,13 +350,7 @@
 
   <div id="results" style="display:none;">
     <div class="panel">
-      <div class="table-controls">
-        <div class="panel-title" style="margin:0;">Summary (matched precincts only)</div>
-        <div>
-          <button class="btn primary" id="copy-summary-btn" type="button">Copy summary to clipboard</button>
-          <span id="copy-summary-feedback"></span>
-        </div>
-      </div>
+      <div class="panel-title">Summary (matched precincts only)</div>
       <p class="info-note">
         Each card compares the baseline against one comparison race, but <b style="color:var(--gold)">only over
         precincts that exist in both years</b>. Precincts that were added, split, or renumbered between years
@@ -703,7 +697,7 @@ function renderTable(baseline, comparisons, rows, summaries) {
   const colCells = [`<th>Dem</th><th>Rep</th><th>Other</th><th>Total</th>`];
   comparisons.forEach((c, ci) => {
     groupCells.push(`<th colspan="8" class="sep ${colorClass(ci)}">${escapeHtml(raceLabel(c))}</th>`);
-    colCells.push(`<th class="sep">Dem</th><th>\u0394Dem%</th><th>Rep</th><th>\u0394Rep%</th><th>Other</th><th>\u0394Other%</th><th>Total</th><th>\u0394Total%</th>`);
+    colCells.push(`<th class="sep">Dem</th><th>Rep</th><th>Other</th><th>Total</th><th>\u0394Dem%</th><th>\u0394Rep%</th><th>\u0394Other%</th><th>\u0394Total%</th>`);
   });
 
   const thead = `<thead>
@@ -721,10 +715,8 @@ function renderTable(baseline, comparisons, rows, summaries) {
   ];
   summaries.forEach(s => {
     totalRowCells.push(
-      tdNum(s.cDem, 'sep'), tdPct(s.demDrop),
-      tdNum(s.cRep), tdPct(s.repDrop),
-      tdNum(s.cOther), tdPct(s.otherDrop),
-      tdNum(s.cTotal), tdPct(s.totalDrop)
+      tdNum(s.cDem, 'sep'), tdNum(s.cRep), tdNum(s.cOther), tdNum(s.cTotal),
+      tdPct(s.demDrop), tdPct(s.repDrop), tdPct(s.otherDrop), tdPct(s.totalDrop)
     );
   });
   const totalRowHTML = `<tr class="total-row">${totalRowCells.join('')}</tr>`;
@@ -738,15 +730,12 @@ function renderTable(baseline, comparisons, rows, summaries) {
     const b = r.baseline;
     cells.push(tdNum(b ? b.dem : null), tdNum(b ? b.rep : null), tdNum(b ? b.other : null), tdNum(b ? b.total : null));
     r.comparisons.forEach(c => {
+      cells.push(tdNum(c ? c.dem : null, 'sep'), tdNum(c ? c.rep : null), tdNum(c ? c.other : null), tdNum(c ? c.total : null));
       const bothPresent = b && c;
       cells.push(
-        tdNum(c ? c.dem : null, 'sep'),
         tdPct(bothPresent ? pctDropOff(b.dem, c.dem) : null),
-        tdNum(c ? c.rep : null),
         tdPct(bothPresent ? pctDropOff(b.rep, c.rep) : null),
-        tdNum(c ? c.other : null),
         tdPct(bothPresent ? pctDropOff(b.other, c.other) : null),
-        tdNum(c ? c.total : null),
         tdPct(bothPresent ? pctDropOff(b.total, c.total) : null)
       );
     });
@@ -763,7 +752,7 @@ function buildTSV() {
   const header2 = ['', '', '', 'Dem', 'Rep', 'Other', 'Total'];
   comparisons.forEach(c => {
     header1.push(raceLabel(c), '', '', '', '', '', '', '');
-    header2.push('Dem', 'DemDrop%', 'Rep', 'RepDrop%', 'Other', 'OtherDrop%', 'Total', 'TotalDrop%');
+    header2.push('Dem', 'Rep', 'Other', 'Total', 'DemDrop%', 'RepDrop%', 'OtherDrop%', 'TotalDrop%');
   });
 
   let bTotalDem=0,bTotalRep=0,bTotalOther=0,bTotalTotal=0;
@@ -774,12 +763,7 @@ function buildTSV() {
 
   const totalRow = ['TOTAL', '', '', bTotalDem, bTotalRep, bTotalOther, bTotalTotal];
   summaries.forEach(s => {
-    totalRow.push(
-      s.cDem, pctRawOrDash(s.demDrop),
-      s.cRep, pctRawOrDash(s.repDrop),
-      s.cOther, pctRawOrDash(s.otherDrop),
-      s.cTotal, pctRawOrDash(s.totalDrop)
-    );
+    totalRow.push(s.cDem, s.cRep, s.cOther, s.cTotal, pctRawOrDash(s.demDrop), pctRawOrDash(s.repDrop), pctRawOrDash(s.otherDrop), pctRawOrDash(s.totalDrop));
   });
 
   const dataRows = rows.map(r => {
@@ -787,15 +771,12 @@ function buildTSV() {
     const b = r.baseline;
     line.push(rawOrDash(b ? b.dem : null), rawOrDash(b ? b.rep : null), rawOrDash(b ? b.other : null), rawOrDash(b ? b.total : null));
     r.comparisons.forEach(c => {
+      line.push(rawOrDash(c ? c.dem : null), rawOrDash(c ? c.rep : null), rawOrDash(c ? c.other : null), rawOrDash(c ? c.total : null));
       const bothPresent = b && c;
       line.push(
-        rawOrDash(c ? c.dem : null),
         bothPresent ? pctRawOrDash(pctDropOff(b.dem, c.dem)) : '',
-        rawOrDash(c ? c.rep : null),
         bothPresent ? pctRawOrDash(pctDropOff(b.rep, c.rep)) : '',
-        rawOrDash(c ? c.other : null),
         bothPresent ? pctRawOrDash(pctDropOff(b.other, c.other)) : '',
-        rawOrDash(c ? c.total : null),
         bothPresent ? pctRawOrDash(pctDropOff(b.total, c.total)) : ''
       );
     });
@@ -805,44 +786,17 @@ function buildTSV() {
   return [header1.join('\t'), header2.join('\t'), totalRow.join('\t'), ...dataRows].join('\n');
 }
 
-function buildSummaryTSV() {
-  if (!lastResult) return '';
-  const { baseline, summaries } = lastResult;
-  const pctRawOrDash = v => (v === null || v === undefined) ? '' : (v * 100).toFixed(2) + '%';
-
-  const header = [
-    'Baseline Race', 'Baseline Candidates', 'Comparison Race', 'Comparison Candidates',
-    'Dem Drop-off %', 'Rep Drop-off %', 'Other Drop-off %', 'Total Drop-off %',
-    'Matched Precincts', 'Baseline Total Precincts', 'Baseline-only (Excluded)', 'Comparison-only Precincts'
-  ];
-
-  const rows = summaries.map(s => [
-    raceLabel(baseline),
-    `${baseline.demCandidate || 'Dem'} / ${baseline.repCandidate || 'Rep'}`,
-    raceLabel(s.race),
-    `${s.race.demCandidate || 'Dem'} / ${s.race.repCandidate || 'Rep'}`,
-    pctRawOrDash(s.demDrop),
-    pctRawOrDash(s.repDrop),
-    pctRawOrDash(s.otherDrop),
-    pctRawOrDash(s.totalDrop),
-    s.matchedCount,
-    baseline.map.size,
-    s.baselineOnlyCount,
-    s.compOnlyCount
-  ].join('\t'));
-
-  return [header.join('\t'), ...rows].join('\n');
-}
-
-async function copyToClipboard(text, feedbackEl) {
-  if (!text) return;
+el('#copy-btn').addEventListener('click', async () => {
+  const tsv = buildTSV();
+  if (!tsv) { return; }
+  const feedback = el('#copy-feedback');
   try {
-    await navigator.clipboard.writeText(text);
-    feedbackEl.textContent = 'Copied! Paste into a Google Sheet.';
+    await navigator.clipboard.writeText(tsv);
+    feedback.textContent = 'Copied! Paste into a Google Sheet.';
   } catch (e) {
     // Fallback for sandboxed contexts without clipboard-write permission
     const ta = document.createElement('textarea');
-    ta.value = text;
+    ta.value = tsv;
     ta.style.position = 'fixed';
     ta.style.left = '-9999px';
     document.body.appendChild(ta);
@@ -850,21 +804,13 @@ async function copyToClipboard(text, feedbackEl) {
     ta.select();
     try {
       document.execCommand('copy');
-      feedbackEl.textContent = 'Copied! Paste into a Google Sheet.';
+      feedback.textContent = 'Copied! Paste into a Google Sheet.';
     } catch (e2) {
-      feedbackEl.textContent = 'Copy failed \u2014 select manually.';
+      feedback.textContent = 'Copy failed \u2014 select the table manually.';
     }
     document.body.removeChild(ta);
   }
-  setTimeout(() => { feedbackEl.textContent = ''; }, 4000);
-}
-
-el('#copy-btn').addEventListener('click', () => {
-  copyToClipboard(buildTSV(), el('#copy-feedback'));
-});
-
-el('#copy-summary-btn').addEventListener('click', () => {
-  copyToClipboard(buildSummaryTSV(), el('#copy-summary-feedback'));
+  setTimeout(() => { feedback.textContent = ''; }, 4000);
 });
 
 renderRaceBuilder();
