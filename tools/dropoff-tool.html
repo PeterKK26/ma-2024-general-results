@@ -298,8 +298,14 @@
     border-top: 1px solid var(--line);
   }
   tbody tr.total-row { position: sticky; top: 58px; z-index: 1; }
+  tbody tr:not(.total-row) { cursor: pointer; }
   tbody tr:hover td { background: rgba(255,255,255,0.025); }
   tbody tr.total-row:hover td { background: rgba(227,179,65,0.1); }
+  tbody tr.row-selected td {
+    background: rgba(227,179,65,0.2) !important;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+  }
   td.dash { color: var(--muted-2); }
   td.pos { color: var(--red-soft); }
   td.neg { color: var(--green-soft); }
@@ -822,6 +828,14 @@ function renderTable(baseline, comparisons, rows, summaries) {
   }).join('');
 
   el('#table-scroll').innerHTML = `<table>${thead}<tbody>${totalRowHTML}${bodyRows}</tbody></table>`;
+
+  el('#table-scroll').querySelectorAll('tbody tr:not(.total-row)').forEach(tr => {
+    tr.addEventListener('click', () => {
+      const wasSelected = tr.classList.contains('row-selected');
+      el('#table-scroll').querySelectorAll('tr.row-selected').forEach(r => r.classList.remove('row-selected'));
+      if (!wasSelected) tr.classList.add('row-selected');
+    });
+  });
 }
 
 function buildTSV() {
