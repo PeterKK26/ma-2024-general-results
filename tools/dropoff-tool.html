@@ -305,7 +305,13 @@
   td.neg { color: var(--green-soft); }
   tr.unmatched { border-left: 3px solid var(--gold); }
   tr.unmatched td.left { color: var(--gold); }
-  td.sep { border-left: 1px solid var(--line); }
+  td.sep, th.sep { border-left: 2px solid var(--line); }
+  td.sep.baseline-sep, th.sep.baseline-sep { border-left-color: var(--gold); }
+  td.sep.c0, th.sep.c0 { border-left-color: var(--c0); }
+  td.sep.c1, th.sep.c1 { border-left-color: var(--c1); }
+  td.sep.c2, th.sep.c2 { border-left-color: var(--c2); }
+  td.sep.c3, th.sep.c3 { border-left-color: var(--c3); }
+  td.sep.c4, th.sep.c4 { border-left-color: var(--c4); }
 
   .legend {
     display: flex;
@@ -545,19 +551,35 @@ function precinctSortKey(value) {
   return num + letters;
 }
 
-function pctDropOff(baseVal, compVal) {
-  if (baseVal > 0) return (baseVal - compVal) / baseVal;
+function pctChange(baseVal, compVal) {
+  // Standard % change: positive = comparison got MORE votes than baseline (gain),
+  // negative = fewer (decline).
+  if (baseVal > 0) return (compVal - baseVal) / baseVal;
   return null;
+}
+
+function twoPartyPct(a, b) {
+  const tp = a + b;
+  return tp > 0 ? a / tp : null;
 }
 
 function fmtNum(v) {
   if (v === null || v === undefined) return null;
   return Number(v).toLocaleString('en-US');
 }
+function fmtNumSigned(v) {
+  if (v === null || v === undefined) return null;
+  const n = Number(v);
+  return (n > 0 ? '+' : '') + n.toLocaleString('en-US');
+}
 function fmtPct(v) {
   if (v === null || v === undefined) return null;
   const pct = v * 100;
   return (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
+}
+function fmtPctPlain(v) {
+  if (v === null || v === undefined) return null;
+  return (v * 100).toFixed(1) + '%';
 }
 
 el('#compare-btn').addEventListener('click', runCompare);
@@ -637,8 +659,8 @@ function buildAndRender(aggregated) {
     return {
       race: comp, matchedCount, baselineOnlyCount, compOnlyCount,
       bDem, bRep, bOther, bTotal, cDem, cRep, cOther, cTotal,
-      demDrop: pctDropOff(bDem, cDem), repDrop: pctDropOff(bRep, cRep),
-      otherDrop: pctDropOff(bOther, cOther), totalDrop: pctDropOff(bTotal, cTotal)
+      demChange: pctChange(bDem, cDem), repChange: pctChange(bRep, cRep),
+      otherChange: pctChange(bOther, cOther), totalChange: pctChange(bTotal, cTotal)
     };
   });
 
@@ -651,7 +673,8 @@ function buildAndRender(aggregated) {
 
 function summaryLineHTML(label, val, isPct) {
   let cls = '';
-  if (isPct && val !== null) cls = val > 0 ? 'pos' : (val < 0 ? 'neg' : '');
+  // Positive = gain (good = green), negative = decline (bad = red)
+  if (isPct && val !== null) cls = val < 0 ? 'pos' : (val > 0 ? 'neg' : '');
   const display = isPct ? (fmtPct(val) ?? '\u2014') : (fmtNum(val) ?? '\u2014');
   return `<div class="summary-line"><span class="label">${label}</span><span class="val ${cls}">${display}</span></div>`;
 }
@@ -666,10 +689,10 @@ function renderSummary(baseline, summaries) {
       <div class="summary-card ${colorClass(ci)}">
         <h3>${escapeHtml(raceLabel(baseline))} &rarr; ${escapeHtml(raceLabel(s.race))}</h3>
         <div class="candidates">${candLine}</div>
-        ${summaryLineHTML('Dem drop-off', s.demDrop, true)}
-        ${summaryLineHTML('Rep drop-off', s.repDrop, true)}
-        ${summaryLineHTML('Other drop-off', s.otherDrop, true)}
-        ${summaryLineHTML('Total drop-off', s.totalDrop, true)}
+        ${summaryLineHTML('Dem change', s.demChange, true)}
+        ${summaryLineHTML('Rep change', s.repChange, true)}
+        ${summaryLineHTML('Other change', s.otherChange, true)}
+        ${summaryLineHTML('Total change', s.totalChange, true)}
         <div class="match-note">
           <b>${s.matchedCount.toLocaleString()}</b> / ${baseline.map.size.toLocaleString()} baseline precincts matched.
           ${s.baselineOnlyCount ? `${s.baselineOnlyCount} baseline-only precinct(s) excluded. ` : ''}
@@ -681,15 +704,31 @@ function renderSummary(baseline, summaries) {
   }).join('');
 }
 
+// Plain (uncolored) cells - used for raw vote counts and each race's own
+// composition percentages. Only deltas get red/green coloring.
 function tdNum(v, extraCls) {
   const d = fmtNum(v);
   if (d === null) return `<td class="dash${extraCls ? ' ' + extraCls : ''}">&mdash;</td>`;
   return `<td class="${extraCls || ''}">${d}</td>`;
 }
+function tdPctPlain(v, extraCls) {
+  const d = fmtPctPlain(v);
+  if (d === null) return `<td class="dash${extraCls ? ' ' + extraCls : ''}">&mdash;</td>`;
+  return `<td class="${extraCls || ''}">${d}</td>`;
+}
+
+// Colored cells - used only for delta columns (comparison vs baseline).
+// Positive = gain = green ('neg' class), negative = decline = red ('pos' class).
+function tdNumDelta(v, extraCls) {
+  const d = fmtNumSigned(v);
+  if (d === null) return `<td class="dash${extraCls ? ' ' + extraCls : ''}">&mdash;</td>`;
+  const cls = (v < 0 ? 'pos' : (v > 0 ? 'neg' : '')) + (extraCls ? ' ' + extraCls : '');
+  return `<td class="${cls}">${d}</td>`;
+}
 function tdPct(v, extraCls) {
   const d = fmtPct(v);
   if (d === null) return `<td class="dash${extraCls ? ' ' + extraCls : ''}">&mdash;</td>`;
-  const cls = (v > 0 ? 'pos' : (v < 0 ? 'neg' : '')) + (extraCls ? ' ' + extraCls : '');
+  const cls = (v < 0 ? 'pos' : (v > 0 ? 'neg' : '')) + (extraCls ? ' ' + extraCls : '');
   return `<td class="${cls}">${d}</td>`;
 }
 
@@ -698,12 +737,17 @@ function renderTable(baseline, comparisons, rows, summaries) {
     `<th class="left" rowspan="2">City/Town</th>`,
     `<th class="left" rowspan="2">Ward</th>`,
     `<th class="left" rowspan="2">Precinct</th>`,
-    `<th colspan="4">${escapeHtml(raceLabel(baseline))} (baseline)</th>`
+    `<th colspan="7" class="sep baseline-sep">${escapeHtml(raceLabel(baseline))} (baseline)</th>`
   ];
-  const colCells = [`<th>Dem</th><th>Rep</th><th>Other</th><th>Total</th>`];
+  const colCells = [`<th class="sep baseline-sep">Dem</th><th>Dem%</th><th>Rep</th><th>Rep%</th><th>Other</th><th>Other%</th><th>Total</th>`];
   comparisons.forEach((c, ci) => {
-    groupCells.push(`<th colspan="8" class="sep ${colorClass(ci)}">${escapeHtml(raceLabel(c))}</th>`);
-    colCells.push(`<th class="sep">Dem</th><th>\u0394Dem%</th><th>Rep</th><th>\u0394Rep%</th><th>Other</th><th>\u0394Other%</th><th>Total</th><th>\u0394Total%</th>`);
+    groupCells.push(`<th colspan="16" class="sep ${colorClass(ci)}">${escapeHtml(raceLabel(c))}</th>`);
+    colCells.push(
+      `<th class="sep ${colorClass(ci)}">Dem</th><th>Dem%</th><th>\u0394Dem</th><th>\u0394Dem%</th>` +
+      `<th>Rep</th><th>Rep%</th><th>\u0394Rep</th><th>\u0394Rep%</th>` +
+      `<th>Other</th><th>Other%</th><th>\u0394Other</th><th>\u0394Other%</th>` +
+      `<th>Total</th><th>Total%</th><th>\u0394Total</th><th>\u0394Total%</th>`
+    );
   });
 
   const thead = `<thead>
@@ -714,17 +758,30 @@ function renderTable(baseline, comparisons, rows, summaries) {
   // Total row (matched-only per comparison, unrestricted for baseline)
   let bTotalDem=0,bTotalRep=0,bTotalOther=0,bTotalTotal=0;
   baseline.map.forEach(v => { bTotalDem+=v.dem; bTotalRep+=v.rep; bTotalOther+=v.other; bTotalTotal+=v.total; });
+  const bTotalDemPct = twoPartyPct(bTotalDem, bTotalRep);
+  const bTotalRepPct = twoPartyPct(bTotalRep, bTotalDem);
+  const bTotalOtherPct = bTotalTotal > 0 ? bTotalOther / bTotalTotal : null;
 
   const totalRowCells = [
     `<td class="left">TOTAL</td><td class="left"></td><td class="left"></td>`,
-    tdNum(bTotalDem), tdNum(bTotalRep), tdNum(bTotalOther), tdNum(bTotalTotal)
+    tdNum(bTotalDem, 'sep baseline-sep'), tdPctPlain(bTotalDemPct),
+    tdNum(bTotalRep), tdPctPlain(bTotalRepPct),
+    tdNum(bTotalOther), tdPctPlain(bTotalOtherPct),
+    tdNum(bTotalTotal)
   ];
-  summaries.forEach(s => {
+  summaries.forEach((s, ci) => {
+    const cDemPct = twoPartyPct(s.cDem, s.cRep);
+    const cRepPct = twoPartyPct(s.cRep, s.cDem);
+    const cOtherPct = s.cTotal > 0 ? s.cOther / s.cTotal : null;
     totalRowCells.push(
-      tdNum(s.cDem, 'sep'), tdPct(s.demDrop),
-      tdNum(s.cRep), tdPct(s.repDrop),
-      tdNum(s.cOther), tdPct(s.otherDrop),
-      tdNum(s.cTotal), tdPct(s.totalDrop)
+      tdNum(s.cDem, 'sep ' + colorClass(ci)), tdPctPlain(cDemPct),
+      tdNumDelta(s.cDem - s.bDem), tdPct(s.demChange),
+      tdNum(s.cRep), tdPctPlain(cRepPct),
+      tdNumDelta(s.cRep - s.bRep), tdPct(s.repChange),
+      tdNum(s.cOther), tdPctPlain(cOtherPct),
+      tdNumDelta(s.cOther - s.bOther), tdPct(s.otherChange),
+      tdNum(s.cTotal), `<td class="dash">&mdash;</td>`,
+      tdNumDelta(s.cTotal - s.bTotal), tdPct(s.totalChange)
     );
   });
   const totalRowHTML = `<tr class="total-row">${totalRowCells.join('')}</tr>`;
@@ -736,18 +793,29 @@ function renderTable(baseline, comparisons, rows, summaries) {
       `<td class="left">${escapeHtml(r.precinct)}</td>`
     ];
     const b = r.baseline;
-    cells.push(tdNum(b ? b.dem : null), tdNum(b ? b.rep : null), tdNum(b ? b.other : null), tdNum(b ? b.total : null));
-    r.comparisons.forEach(c => {
+    const bDemPct = b ? twoPartyPct(b.dem, b.rep) : null;
+    const bRepPct = b ? twoPartyPct(b.rep, b.dem) : null;
+    const bOtherPct = b ? (b.total > 0 ? b.other / b.total : null) : null;
+    cells.push(
+      tdNum(b ? b.dem : null, 'sep baseline-sep'), tdPctPlain(bDemPct),
+      tdNum(b ? b.rep : null), tdPctPlain(bRepPct),
+      tdNum(b ? b.other : null), tdPctPlain(bOtherPct),
+      tdNum(b ? b.total : null)
+    );
+    r.comparisons.forEach((c, ci) => {
       const bothPresent = b && c;
+      const cDemPct = c ? twoPartyPct(c.dem, c.rep) : null;
+      const cRepPct = c ? twoPartyPct(c.rep, c.dem) : null;
+      const cOtherPct = c ? (c.total > 0 ? c.other / c.total : null) : null;
       cells.push(
-        tdNum(c ? c.dem : null, 'sep'),
-        tdPct(bothPresent ? pctDropOff(b.dem, c.dem) : null),
-        tdNum(c ? c.rep : null),
-        tdPct(bothPresent ? pctDropOff(b.rep, c.rep) : null),
-        tdNum(c ? c.other : null),
-        tdPct(bothPresent ? pctDropOff(b.other, c.other) : null),
-        tdNum(c ? c.total : null),
-        tdPct(bothPresent ? pctDropOff(b.total, c.total) : null)
+        tdNum(c ? c.dem : null, 'sep ' + colorClass(ci)), tdPctPlain(cDemPct),
+        tdNumDelta(bothPresent ? c.dem - b.dem : null), tdPct(bothPresent ? pctChange(b.dem, c.dem) : null),
+        tdNum(c ? c.rep : null), tdPctPlain(cRepPct),
+        tdNumDelta(bothPresent ? c.rep - b.rep : null), tdPct(bothPresent ? pctChange(b.rep, c.rep) : null),
+        tdNum(c ? c.other : null), tdPctPlain(cOtherPct),
+        tdNumDelta(bothPresent ? c.other - b.other : null), tdPct(bothPresent ? pctChange(b.other, c.other) : null),
+        tdNum(c ? c.total : null), `<td class="dash">&mdash;</td>`,
+        tdNumDelta(bothPresent ? c.total - b.total : null), tdPct(bothPresent ? pctChange(b.total, c.total) : null)
       );
     });
     return `<tr class="${r.unmatched ? 'unmatched' : ''}">${cells.join('')}</tr>`;
@@ -759,44 +827,62 @@ function renderTable(baseline, comparisons, rows, summaries) {
 function buildTSV() {
   if (!lastResult) return '';
   const { baseline, comparisons, rows, summaries } = lastResult;
-  const header1 = ['City/Town', 'Ward', 'Precinct', raceLabel(baseline), '', '', ''];
-  const header2 = ['', '', '', 'Dem', 'Rep', 'Other', 'Total'];
+  const header1 = ['City/Town', 'Ward', 'Precinct', raceLabel(baseline) + ' (baseline)', '', '', '', '', '', ''];
+  const header2 = ['', '', '', 'Dem', 'Dem%', 'Rep', 'Rep%', 'Other', 'Other%', 'Total'];
   comparisons.forEach(c => {
-    header1.push(raceLabel(c), '', '', '', '', '', '', '');
-    header2.push('Dem', 'DemDrop%', 'Rep', 'RepDrop%', 'Other', 'OtherDrop%', 'Total', 'TotalDrop%');
+    header1.push(raceLabel(c), '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+    header2.push(
+      'Dem', 'Dem%', 'DemChange', 'DemChange%',
+      'Rep', 'Rep%', 'RepChange', 'RepChange%',
+      'Other', 'Other%', 'OtherChange', 'OtherChange%',
+      'Total', 'Total%', 'TotalChange', 'TotalChange%'
+    );
   });
 
   let bTotalDem=0,bTotalRep=0,bTotalOther=0,bTotalTotal=0;
   baseline.map.forEach(v => { bTotalDem+=v.dem; bTotalRep+=v.rep; bTotalOther+=v.other; bTotalTotal+=v.total; });
 
   const rawOrDash = v => (v === null || v === undefined) ? '' : v;
-  const pctRawOrDash = v => (v === null || v === undefined) ? '' : (v * 100).toFixed(2) + '%';
+  const pctPlainOrDash = v => (v === null || v === undefined) ? '' : (v * 100).toFixed(1) + '%';
+  const pctSignedOrDash = v => (v === null || v === undefined) ? '' : (v >= 0 ? '+' : '') + (v * 100).toFixed(2) + '%';
+  const numSignedOrDash = v => (v === null || v === undefined) ? '' : (v > 0 ? '+' : '') + v;
 
-  const totalRow = ['TOTAL', '', '', bTotalDem, bTotalRep, bTotalOther, bTotalTotal];
+  const totalRow = [
+    'TOTAL', '', '',
+    bTotalDem, pctPlainOrDash(twoPartyPct(bTotalDem, bTotalRep)),
+    bTotalRep, pctPlainOrDash(twoPartyPct(bTotalRep, bTotalDem)),
+    bTotalOther, pctPlainOrDash(bTotalTotal > 0 ? bTotalOther / bTotalTotal : null),
+    bTotalTotal
+  ];
   summaries.forEach(s => {
     totalRow.push(
-      s.cDem, pctRawOrDash(s.demDrop),
-      s.cRep, pctRawOrDash(s.repDrop),
-      s.cOther, pctRawOrDash(s.otherDrop),
-      s.cTotal, pctRawOrDash(s.totalDrop)
+      s.cDem, pctPlainOrDash(twoPartyPct(s.cDem, s.cRep)), numSignedOrDash(s.cDem - s.bDem), pctSignedOrDash(s.demChange),
+      s.cRep, pctPlainOrDash(twoPartyPct(s.cRep, s.cDem)), numSignedOrDash(s.cRep - s.bRep), pctSignedOrDash(s.repChange),
+      s.cOther, pctPlainOrDash(s.cTotal > 0 ? s.cOther / s.cTotal : null), numSignedOrDash(s.cOther - s.bOther), pctSignedOrDash(s.otherChange),
+      s.cTotal, '', numSignedOrDash(s.cTotal - s.bTotal), pctSignedOrDash(s.totalChange)
     );
   });
 
   const dataRows = rows.map(r => {
     const line = [r.city, r.ward, r.precinct];
     const b = r.baseline;
-    line.push(rawOrDash(b ? b.dem : null), rawOrDash(b ? b.rep : null), rawOrDash(b ? b.other : null), rawOrDash(b ? b.total : null));
+    line.push(
+      rawOrDash(b ? b.dem : null), b ? pctPlainOrDash(twoPartyPct(b.dem, b.rep)) : '',
+      rawOrDash(b ? b.rep : null), b ? pctPlainOrDash(twoPartyPct(b.rep, b.dem)) : '',
+      rawOrDash(b ? b.other : null), b ? pctPlainOrDash(b.total > 0 ? b.other / b.total : null) : '',
+      rawOrDash(b ? b.total : null)
+    );
     r.comparisons.forEach(c => {
       const bothPresent = b && c;
       line.push(
-        rawOrDash(c ? c.dem : null),
-        bothPresent ? pctRawOrDash(pctDropOff(b.dem, c.dem)) : '',
-        rawOrDash(c ? c.rep : null),
-        bothPresent ? pctRawOrDash(pctDropOff(b.rep, c.rep)) : '',
-        rawOrDash(c ? c.other : null),
-        bothPresent ? pctRawOrDash(pctDropOff(b.other, c.other)) : '',
-        rawOrDash(c ? c.total : null),
-        bothPresent ? pctRawOrDash(pctDropOff(b.total, c.total)) : ''
+        rawOrDash(c ? c.dem : null), c ? pctPlainOrDash(twoPartyPct(c.dem, c.rep)) : '',
+        bothPresent ? numSignedOrDash(c.dem - b.dem) : '', bothPresent ? pctSignedOrDash(pctChange(b.dem, c.dem)) : '',
+        rawOrDash(c ? c.rep : null), c ? pctPlainOrDash(twoPartyPct(c.rep, c.dem)) : '',
+        bothPresent ? numSignedOrDash(c.rep - b.rep) : '', bothPresent ? pctSignedOrDash(pctChange(b.rep, c.rep)) : '',
+        rawOrDash(c ? c.other : null), c ? pctPlainOrDash(c.total > 0 ? c.other / c.total : null) : '',
+        bothPresent ? numSignedOrDash(c.other - b.other) : '', bothPresent ? pctSignedOrDash(pctChange(b.other, c.other)) : '',
+        rawOrDash(c ? c.total : null), '',
+        bothPresent ? numSignedOrDash(c.total - b.total) : '', bothPresent ? pctSignedOrDash(pctChange(b.total, c.total)) : ''
       );
     });
     return line.join('\t');
@@ -808,11 +894,11 @@ function buildTSV() {
 function buildSummaryTSV() {
   if (!lastResult) return '';
   const { baseline, summaries } = lastResult;
-  const pctRawOrDash = v => (v === null || v === undefined) ? '' : (v * 100).toFixed(2) + '%';
+  const pctRawOrDash = v => (v === null || v === undefined) ? '' : (v >= 0 ? '+' : '') + (v * 100).toFixed(2) + '%';
 
   const header = [
     'Baseline Race', 'Baseline Candidates', 'Comparison Race', 'Comparison Candidates',
-    'Dem Drop-off %', 'Rep Drop-off %', 'Other Drop-off %', 'Total Drop-off %',
+    'Dem Change %', 'Rep Change %', 'Other Change %', 'Total Change %',
     'Matched Precincts', 'Baseline Total Precincts', 'Baseline-only (Excluded)', 'Comparison-only Precincts'
   ];
 
@@ -821,10 +907,10 @@ function buildSummaryTSV() {
     `${baseline.demCandidate || 'Dem'} / ${baseline.repCandidate || 'Rep'}`,
     raceLabel(s.race),
     `${s.race.demCandidate || 'Dem'} / ${s.race.repCandidate || 'Rep'}`,
-    pctRawOrDash(s.demDrop),
-    pctRawOrDash(s.repDrop),
-    pctRawOrDash(s.otherDrop),
-    pctRawOrDash(s.totalDrop),
+    pctRawOrDash(s.demChange),
+    pctRawOrDash(s.repChange),
+    pctRawOrDash(s.otherChange),
+    pctRawOrDash(s.totalChange),
     s.matchedCount,
     baseline.map.size,
     s.baselineOnlyCount,
